@@ -1,17 +1,17 @@
 {
   "accountAssociation": {
-    "header": "REPLACE_WITH_GENERATED_HEADER",
-    "payload": "REPLACE_WITH_GENERATED_PAYLOAD",
-    "signature": "REPLACE_WITH_GENERATED_SIGNATURE"
+    "header": "REPLACE_WITH_HEADER",
+    "payload": "REPLACE_WITH_PAYLOAD",
+    "signature": "REPLACE_WITH_SIGNATURE"
   },
   "miniapp": {
     "version": "1",
     "name": "Farcaster Mario",
-    "homeUrl": "https://YOUR_DOMAIN",
-    "iconUrl": "https://YOUR_DOMAIN/icon.png",
-    "splashImageUrl": "https://YOUR_DOMAIN/splash.png",
+    "homeUrl": "https://farcaster-mario-miniapp-production.up.railway.app",
+    "iconUrl": "https://farcaster-mario-miniapp-production.up.railway.app/icon.png",
+    "splashImageUrl": "https://farcaster-mario-miniapp-production.up.railway.app/splash.png",
     "splashBackgroundColor": "#0b0b10",
-    "subtitle": "Mario-style coin runner",
-    "description": "Collect coins, post your score, and play inside Farcaster as a Mini App."
+    "subtitle": "Mario-style mini game",
+    "description": "Collect coins, beat the level, share your score inside Farcaster."
   }
 }

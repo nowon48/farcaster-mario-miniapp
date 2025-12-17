@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Farcaster Mario Mini App</title>
+  <link rel="icon" href="/icon.png" />
+  <link rel="stylesheet" href="/styles.css" />
+  <!-- Optional: basic social preview -->
+  <meta name="description" content="A simple Mario-style mini game for Farcaster Mini Apps. Collect coins, post score, and use your Farcaster identity." />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img class="brand__icon" src="/icon.png" alt="icon" />
+      <div class="brand__text">
+        <div class="brand__title">Farcaster Mario</div>
+        <div class="brand__sub">Mini App • Coins + Score</div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button id="addBtn" class="btn">Add to Farcaster</button>
+      <button id="castBtn" class="btn btn--ghost">Share Score</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="panel">
+      <div class="row">
+        <div class="pill" id="envPill">Environment: web</div>
+        <div class="pill" id="userPill">User: not signed in</div>
+      </div>
+
+      <div class="row row--spaced">
+        <div class="stat">Score: <span id="scoreEl">0</span></div>
+        <div class="stat">Best: <span id="bestEl">0</span></div>
+      </div>
+
+      <canvas id="game" width="800" height="450"></canvas>
+
+      <div class="hint">
+        <b>Controls:</b> ← → to move, Space/↑ to jump • On mobile: tap left/right/jump buttons
+      </div>
+
+      <div class="mobile-controls">
+        <button id="leftBtn" class="btn btn--control">◀</button>
+        <button id="jumpBtn" class="btn btn--control">⤒</button>
+        <button id="rightBtn" class="btn btn--control">▶</button>
+      </div>
+    </section>
+
+    <aside class="side">
+      <div class="card">
+        <div class="card__title">How this works</div>
+        <p class="card__p">
+          Inside Farcaster, we use the <code>@farcaster/miniapp-sdk</code> to read context (FID, username),
+          hide the splash screen (<code>sdk.actions.ready()</code>), and optionally prompt the user to add the app.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card__title">Backend (optional)</div>
+        <p class="card__p">
+          This template includes a tiny Express backend to store scores in memory. Swap it to Postgres later.
+          Note: server-side validation is minimal in this MVP.
+        </p>
+        <div class="row row--spaced">
+          <button id="submitScoreBtn" class="btn">Submit score</button>
+          <button id="leaderboardBtn" class="btn btn--ghost">Leaderboard</button>
+        </div>
+        <pre id="apiOut" class="code"></pre>
+      </div>
+
+      <div class="card">
+        <div class="card__title">Next upgrades</div>
+        <ul class="card__ul">
+          <li>Onchain rewards on Base using the Mini App wallet provider</li>
+          <li>Daily leaderboard reset + anti-cheat signatures</li>
+          <li>Multiple levels / enemies</li>
+        </ul>
+      </div>
+    </aside>
+  </main>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
